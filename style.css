@@ -1,0 +1,172 @@
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes countdown {
+  0% {
+    content: '3';
+  }
+  50% {
+    content: '2';
+  }
+  100% {
+    content: '1';
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  margin: auto;
+}
+
+.cards {
+  background-color: #000;
+  color: #fff;
+}
+
+.cards__wrapper {
+  width: 490px;
+  margin: auto;
+  padding: 50px 0;
+}
+
+.title {
+  margin: 0;
+  line-height: 56px;
+  font-size: 54px;
+}
+
+.subtitle {
+  line-height: 19px;
+  font-size: 14px;
+  margin-top: 35px;
+  margin-bottom: 55px;
+  max-width: 350px;
+}
+
+.demo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.demo__item {
+  background-color: #202020;
+  width: 240px;
+  height: 240px;
+  margin-right: 10px;
+  margin-top: 10px;
+  position: relative;
+  border-radius: 4px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.demo__item:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+.demo__item:first-of-type, .demo__item:nth-of-type(2) {
+  margin-top: 0;
+}
+
+.demo__item-title {
+  width: 158px;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  margin: 0;
+  line-height: 30px;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.demo__item-subtitle {
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 24px;
+  margin-left: 16px;
+  width: 158px;
+}
+
+.demo__item-subtitle_character_cousteau {
+  position: absolute;
+  top: 24px;
+  left: 16px;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.demo__item:hover .demo__item-subtitle_character_cousteau {
+  opacity: 1;
+}
+
+.demo__wrapper {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.demo__wrapper_character_cousteau {
+  background-image: url(https://pictures.s3.yandex.net/animation_topic/kusto.png);
+  transition: transform 0.9s ease-in-out;
+}
+
+.demo__item:hover .demo__wrapper_character_cousteau {
+  transform: scale(1.05);
+}
+
+.demo__item_character_rossie {
+  background-image: url(https://pictures.s3.yandex.net/animation_topic/rossie.png);
+}
+
+.demo__item_character_baumgartner {
+  background-image: url(https://pictures.s3.yandex.net/animation_topic/baumgartner.png);
+}
+
+.demo__item_character_starman {
+  background-image: url(https://pictures.s3.yandex.net/animation_topic/starman.png);
+  transition: box-shadow 0.3s ease;
+}
+
+.demo__item_character_starman:hover {
+  box-shadow: 0 0 20px #4E52B0;
+}
+
+.demo__item-ico {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  width: 40px;
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+
+.demo__item-subtitle_character_baumgartner::after {
+  content: '3';
+  position: absolute;
+  top: 35px;
+  right: 15px;
+  font-size: 72px;
+}
+
+.demo__item:hover .demo__item-subtitle_character_baumgartner::after {
+  animation: countdown 2s linear 1 forwards;
+}
